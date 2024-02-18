@@ -36,14 +36,23 @@ vim.keymap.set("n", "<A-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/myschkin/plugins.lua<CR>");
 
-vim.keymap.set("n", "<leader><leader>", function()
+vim.keymap.set("n", "<leader>so", function()
     vim.cmd("so")
 end)
+vim.keymap.set('n', '<leader><space>', function() require('telescope.builtin').buffers { sort_lastused = true } end)
+vim.keymap.set('n', '<leader>sf', function() require('telescope.builtin').find_files { previewer = false } end)
+vim.keymap.set('n', '<leader>sb', function() require('telescope.builtin').current_buffer_fuzzy_find() end)
+vim.keymap.set('n', '<leader>sh', function() require('telescope.builtin').help_tags() end)
+vim.keymap.set('n', '<leader>st', function() require('telescope.builtin').tags() end)
+vim.keymap.set('n', '<leader>sd', function() require('telescope.builtin').grep_string() end)
+vim.keymap.set('n', '<leader>sp', function() require('telescope.builtin').live_grep() end)
+vim.keymap.set('n', '<leader>?', function() require('telescope.builtin').oldfiles() end)
+
 
 vim.keymap.set("n", "<C-t>", "<Cmd>ToggleTerm<CR>")
 
