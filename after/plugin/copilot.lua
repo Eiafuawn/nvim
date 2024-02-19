@@ -1,5 +1,12 @@
 require('copilot').setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
+  suggestion = {
+    enabled = true,
+    auto_trigger = true,
+    accept = false,
+  },
+  panel = {
+    enabled = true,
+    auto_refresh = true
+  },
 })
-require('copilot_cmp').setup()
+-- require('copilot_cmp').setup()
