@@ -12,14 +12,13 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
-if vim.g.neovide then
-  vim.keymap.set("n", "<leader>P", [["+P]])
-end
+vim.keymap.set("x", "<leader>dp", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>yp", [["+p]])
+vim.keymap.set("n", "<leader>yP", [["+P]])
+vim.keymap.set({ "n", "v" }, "<leader>yy", [["+y]])
+vim.keymap.set("n", "<leader>yY", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
