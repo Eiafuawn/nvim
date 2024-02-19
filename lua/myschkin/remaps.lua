@@ -14,7 +14,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 if vim.g.neovide then
-    vim.keymap.set("n", "<leader>P", [["+P]])
+  vim.keymap.set("n", "<leader>P", [["+P]])
 end
 
 -- next greatest remap ever : asbjornHaland
@@ -39,7 +39,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>so", function() vim.cmd("so") end)
 
-vim.keymap.set("n", "<leader>e", "<cmd>:NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>ee", "<cmd>:NvimTreeToggle<CR>")
 vim.keymap.set("n", "<leader>ep", "<cmd>e ~/.config/nvim/lua/myschkin/plugins.lua<CR>");
 vim.keymap.set('n', '<leader><space>', function() require('telescope.builtin').buffers { sort_lastused = true } end)
 vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files { previewer = false } end)
@@ -49,6 +49,8 @@ vim.keymap.set('n', '<leader>ft', function() require('telescope.builtin').tags()
 vim.keymap.set('n', '<leader>fd', function() require('telescope.builtin').grep_string() end)
 vim.keymap.set('n', '<leader>fp', function() require('telescope.builtin').live_grep() end)
 vim.keymap.set('n', '<leader>?', function() require('telescope.builtin').oldfiles() end)
+
+-- See after/plugins/harpoon.lua for "<leader>h" remaps
 
 vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
 vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
@@ -61,7 +63,7 @@ vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>");
 vim.keymap.set("n", "<C-t>", "<Cmd>ToggleTerm<CR>")
 
 function _G.set_terminal_keymaps()
-  local opts = {buffer = 0}
+  local opts = { buffer = 0 }
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
@@ -75,4 +77,5 @@ end
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 
-vim.keymap.set('n', '<C-K>', '<cmd>lua vim.diagnostic.open_float(nil, { focusable = false })<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-K>', '<cmd>lua vim.diagnostic.open_float(nil, { focusable = false })<CR>',
+  { noremap = true, silent = true })
