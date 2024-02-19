@@ -14,15 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {}
-  },
-  {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
@@ -78,9 +69,6 @@ require("lazy").setup({
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    config = function()
-      require("copilot").setup({})
-    end,
   },
   {
     'windwp/nvim-autopairs',
@@ -117,5 +105,10 @@ require("lazy").setup({
     config = function()
       require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     end
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
   },
 })
