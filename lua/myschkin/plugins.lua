@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",     -- latest stable release
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
@@ -33,14 +33,20 @@ require("lazy").setup({
       require("nvim-tree").setup {}
     end,
   },
-  { "stevearc/dressing.nvim",          opts = {} },
+  { "stevearc/dressing.nvim",                      opts = {} },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { "catppuccin/nvim",                 name = "catppuccin", priority = 1000 },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    -- NOTE: If you have trouble with this installation, refer to the README for telescope-fzf-native.
+    build = 'make',
+  },
+  { "catppuccin/nvim",                             name = "catppuccin", priority = 1000 },
+  { "nvim-treesitter/nvim-treesitter",             build = ":TSUpdate" },
+  { 'nvim-treesitter/nvim-treesitter-textobjects', },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -79,7 +85,7 @@ require("lazy").setup({
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opts = {}     -- this is equalent to setup({}) function
+    opts = {} -- this is equalent to setup({}) function
   },
   {
     'numToStr/Comment.nvim',
@@ -88,7 +94,7 @@ require("lazy").setup({
   },
   {
     'mrcjkb/rustaceanvim',
-    version = '^4',     -- Recommended
+    version = '^4', -- Recommended
     ft = { 'rust' },
   },
   { 'NvChad/nvim-colorizer.lua' },
