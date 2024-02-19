@@ -1,4 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
   ensure_installed = {
     "vimdoc",
@@ -51,10 +51,23 @@ require 'nvim-treesitter.configs'.setup {
         -- You can use the capture groups defined in textobjects.scm
         ['aa'] = '@parameter.outer',
         ['ia'] = '@parameter.inner',
-        ['af'] = '@function.outer',
-        ['if'] = '@function.inner',
+        ['am'] = '@function.outer',
+        ['im'] = '@function.inner',
         ['ac'] = '@class.outer',
         ['ic'] = '@class.inner',
+
+        ['a='] = '@assignment.outer',
+        ['i='] = '@assignment.inner',
+        ['l='] = '@assignment.lhs',
+        ['r='] = '@assignment.rhs',
+
+        ['al'] = '@loop.outer',
+        ['il'] = '@loop.inner',
+        ['ai'] = '@conditional.outer',
+        ['ii'] = '@conditional.inner',
+
+        ['af'] = '@call.outer',
+        ['if'] = '@call.inner',
       },
     },
     move = {
