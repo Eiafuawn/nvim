@@ -27,6 +27,7 @@ require('mason-lspconfig').setup({
   handlers = {
     lsp_zero.default_setup,
     rust_analyzer = lsp_zero.noop,
+    jdtls = lsp_zero.noop,
     require('lspconfig').lua_ls.setup {
       settings = {
         Lua = {

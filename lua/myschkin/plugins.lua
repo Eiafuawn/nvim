@@ -24,7 +24,8 @@ require("lazy").setup({
       require("nvim-tree").setup {}
     end,
   },
-  { "stevearc/dressing.nvim",                      opts = {} },
+  { "stevearc/dressing.nvim",              opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.5',
@@ -55,6 +56,7 @@ require("lazy").setup({
       require("telescope").load_extension("lazygit")
     end,
   },
+  { 'lewis6991/gitsigns.nvim' },
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
   { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
