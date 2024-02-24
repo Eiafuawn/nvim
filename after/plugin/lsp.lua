@@ -23,6 +23,8 @@ require('mason-lspconfig').setup({
     'clangd',
     'jsonls',
     'eslint',
+    'bashls',
+    'vuels',
   },
   handlers = {
     lsp_zero.default_setup,
